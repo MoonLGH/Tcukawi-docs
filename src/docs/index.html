@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoonL/Tsukari</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+  <script src="../assets/js/docsdetail.js" defer></script>
+  <script src="../assets/js/docsnav.js" defer></script>
+  <script src="../../node_modules/flowbite/dist/flowbite.js"></script>
+</head>
+
+<header class="bg-stone-800">
+  <div class="max-w-7xl mx-auto px-2 sm:px-4 md:flex md:justify-between lg:px-8" id="navigation">
+    <nav id="menuNormal" class="hidden md:flex md:py-2 md:space-x-4 lg:space-x-8">
+      <a href="/" class="text-gray-200 hover:bg-stone-950 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white">
+      Tcukawi API</a>
+      <a href="/docs" class="bg-stone-600 text-gray-200 hover:bg-stone-630 hover:text-white rounded-md py-2 px-3 inline-flex items-center text-sm font-semibold focus:outline-none focus-visible:ring-1 focus-visible:ring-white">
+      Documentation</a>
+   </nav>
+   <div class="relative h-16 flex md:max-w-md md:w-full lg:max-w-lg">
+      <div class="relative z-0 flex-1 px-2 flex lg:gap-2 items-center justify-center md:justify-end">
+         <div class="w-full sm:max-w-lg lg:max-w-xs text-end">
+            <a class="font-semibold text-white">Tcukawi API</a>
+         </div>
+      </div>
+      <div class="relative z-10 flex items-center md:hidden">
+         <button type="button"
+            class="rounded-md p-2 inline-flex items-center justify-center text-gray-200 hover:bg-stone-630 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" onclick="toggleNav()"
+            >
+            <span class="sr-only">Open menu</span>
+            <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="block">
+               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg viewBox="0 0 24 24" width="1.2em" height="1.2em" class="hidden">
+               <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+         </button>
+      </div>
+   </div>
+  </div>
+</header>
+
+<body class="overflow-y-hidden">
+  <div id="root" class="flex h-screen">
+   <side>
+      <button onclick="side()" data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="fixed bg-stone-800 inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+         <span class="sr-only">Open sidebar</span>
+         <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+         </svg>
+      </button>
+      <aside id="default-sidebar" class="h-screen hidden md:block top-0 left-0 z-40 w-64 transition-transform -translate-x-full sm:translate-x-0 relative" aria-label="Sidebar">
+         <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+            <ul class="space-y-2 font-medium" id="navsUL">
+
+            </ul>
+         </div>
+      </aside>
+   </side>
+   
+   <div class="p-4 w-full overflow-y-auto" id="content">
+
+   </div>
+  </div>
+</body>
+
+<placeholder class="hidden pb-4 flex flex-col gap-1 z-[-1] relative"></placeholder>
+</html>

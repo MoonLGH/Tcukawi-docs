@@ -1,13 +1,11 @@
 main()
 async function main() {
-    let res = await fetch("https://raw.githubusercontent.com/MoonLGH/templateTailwind/main/package.json")
+    let res = await fetch("https://raw.githubusercontent.com/MoonLGH/Tcukawi-docs/main/data/static.json")
     res = await res.json()
-    res = res.dependencies
+    let bg = res.bgHomepage
 
-    for (var key in res) {
-        if (res.hasOwnProperty(key)) {
-            console.log(key + " -> " + res[key]);
-            document.querySelector("#Deps").innerHTML += `<span>${key} Version ${res[key]}</span><br>`
-        }
+    // if bg on #back is not same as bg, set bg
+    if (!document.querySelector("#back").style.backgroundImage.includes(bg)){
+        document.querySelector("#back").setAttribute("style",`background-image:url("${bg}")`)
     }
 }
