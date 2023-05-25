@@ -40,3 +40,21 @@ a:hover {
     @apply text-blue-700;
 }   
 
+table {
+    @apply border border-gray-300 text-black;
+}
+tbody tr:nth-child(odd) {
+    @apply bg-gray-100;
+}
+tbody tr:nth-child(even) {
+    @apply bg-white;
+}
+thead tr {
+    @apply bg-gray-200;
+}
+th {
+    @apply border border-gray-300;
+}
+td {
+    @apply border border-gray-300;
+}

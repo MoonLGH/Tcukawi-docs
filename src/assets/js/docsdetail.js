@@ -1,4 +1,4 @@
-let converter = new showdown.Converter()
+let converter = new showdown.Converter({tables:true})
 
 let docsbase = "https://raw.githubusercontent.com/MoonLGH/Tcukawi-Api/main/docs/"
 function joindocs(url){
