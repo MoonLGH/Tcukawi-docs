@@ -13,11 +13,39 @@ async function main(){
         console.log(path)
     }
 
-    let res = await (await fetch(joindocs(path))).text()
-    res = converter.makeHtml(res)
-    console.log(res)
-
     if(!path.includes("API") && !path.includes("INTERFACE")){
+        let res = await (await fetch(joindocs(path))).text()
+        console.log(res)
+        res = converter.makeHtml(res)
+        console.log(res)
+        document.querySelector("#content").innerHTML = res
+    } else if(path.includes("API")){
+        let res = await (await fetch(joindocs(path))).text()
+
+        console.log(res)
+        if(res.includes("-Params")){
+            res = res.replace("-Params","<br>\n### Using a params object")
+        }
+        if(res.includes("-Body")){
+            res = res.replace("-Body","<br>\n### Using a Body object")
+        }
+        if(res.includes("-NPM:")){
+            const npmCodeRegex = /NPM: (.*)/; // Matches the text after "NPM: "
+            const npmCodeMatch = res.match(npmCodeRegex);
+            
+            if (npmCodeMatch && npmCodeMatch.length >= 2) {
+              const npmCode = npmCodeMatch[1].trim();
+                res = res.replace(npmCode,`\n### NPM:\n\`\`\`js\n${npmCode}\n\`\`\` `)
+            }
+
+            res = res.replace("\n-NPM:","")
+        }
+
+        res = res.replaceAll("## ","<br>\n##")
+        console.log(res)
+        res = converter.makeHtml(res)
+        console.log(res)
+        
         document.querySelector("#content").innerHTML = res
     }
 }
