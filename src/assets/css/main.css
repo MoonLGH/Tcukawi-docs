@@ -8,6 +8,10 @@ h1 {
     @apply text-4xl;
 }
 
+pre > code {
+    
+}
+
 h2 {
     @apply text-3xl;
 }

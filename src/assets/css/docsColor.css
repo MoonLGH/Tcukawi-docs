@@ -1,0 +1,40 @@
+.method {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+}
+
+.method-post {
+    padding: 5px;
+    border-radius: 5px;
+    background: #49cc90
+}
+
+.method-put {
+    padding: 5px;
+    border-radius: 5px;
+    background: #fca130
+}
+
+.method-delete {
+    padding: 5px;
+    border-radius: 5px;
+    background: #f93e3e
+}
+
+.method-get {
+    padding: 5px;
+    border-radius: 5px;
+    background: #61affe
+}
+
+.method-patch {
+    padding: 5px;
+    border-radius: 5px;
+    background: #50e3c2
+}
+
+.method-options {
+    padding: 5px;
+    border-radius: 5px;
+    background: #0d5aa7
+}
